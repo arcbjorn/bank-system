@@ -2,7 +2,8 @@ package com.banksystem.app.datasource
 
 import com.banksystem.app.model.Bank
 
-abstract class BankDataSource {
+interface BankDataSource {
 
-    abstract fun retrieveBanks(): Collection<Bank>
+    fun retrieveBanks(): Collection<Bank>
+    fun retrieveBank(accountNumber: String): Bank
 }
