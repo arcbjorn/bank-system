@@ -5,7 +5,7 @@ import com.banksystem.app.model.Bank
 import org.springframework.stereotype.Repository
 import java.lang.IllegalArgumentException
 
-@Repository
+@Repository("mock")
 class MockBankDataSource: BankDataSource {
     val banks = mutableListOf(
         Bank("123", 3.14, 7),
