@@ -4,13 +4,13 @@ using Kotlin, Spring Boot, JUnit, Mockk
 **Development**
 
 ```shell
-# open the list of commands
+# view the list of commands
 ./gradlew tasks
 
-# runs as a Spring Boot app
+# run as a Spring Boot app
 ./gradlew bootRun
 
-# executable jar archive to run with java cli
+# make executable jar archive to run with Java cli
 ./gradlew bootJar
 
 # create Docker image
