@@ -15,4 +15,7 @@ using Kotlin, Spring Boot, JUnit, Mockk
 
 # create Docker image
 ./gradlew bootBuildImage
+
+# run all tests
+./gradlew test
 ```
