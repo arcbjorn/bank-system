@@ -6,7 +6,7 @@ data class Bank(
     @JsonProperty("account_number")
     val accountNumber: String,
 
-    @JsonProperty("truts")
+    @JsonProperty("trust")
     val trust: Double,
 
     @JsonProperty("default_transaction_fee")
