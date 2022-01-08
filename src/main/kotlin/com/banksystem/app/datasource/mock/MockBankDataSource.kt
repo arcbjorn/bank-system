@@ -3,10 +3,11 @@ package com.banksystem.app.datasource.mock
 import com.banksystem.app.datasource.BankDataSource
 import com.banksystem.app.model.Bank
 import org.springframework.stereotype.Repository
+import java.lang.IllegalArgumentException
 
 @Repository
 class MockBankDataSource: BankDataSource {
-    val banks = listOf(
+    val banks = mutableListOf(
         Bank("123", 3.14, 7),
         Bank("1010", 2.03, 0),
         Bank("234", 0.0, 97),
@@ -15,5 +16,13 @@ class MockBankDataSource: BankDataSource {
     override fun retrieveBank(accountNumber: String): Bank {
         return banks.firstOrNull() { it.accountNumber == accountNumber }
             ?: throw NoSuchElementException("Could not find a bank with account number $accountNumber")
+    }
+
+    override fun createBank(bank: Bank): Bank {
+        if (banks.any {it.accountNumber == bank.accountNumber}) {
+            throw IllegalArgumentException("Bank with account number ${bank.accountNumber} already exists")
+        }
+        banks.add(bank)
+        return bank
     }
 }
